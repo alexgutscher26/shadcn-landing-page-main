@@ -1,8 +1,9 @@
+/* eslint-disable react/jsx-no-undef */
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Navbar } from "@/components/layout/navbar";
+import { Navbar } from "@/components/layout/navbar"; // Ensure Navbar uses ClerkProvider
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 
@@ -104,7 +105,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Navbar />
+            <Navbar /> 
             {children}
           </ThemeProvider>
         </body>

@@ -1,5 +1,6 @@
 "use client";
-import { CreditCard, Wallet, Menu } from "lucide-react";
+
+import { Wallet, Menu } from "lucide-react";
 import React from "react";
 import {
   Sheet,
@@ -44,21 +45,24 @@ const routeList: RouteProps[] = [
 const featureList: FeatureProps[] = [
   {
     title: "Income Tracking",
-    description: "Easily track and categorize multiple income streams from different gig platforms.",
+    description:
+      "Easily track and categorize multiple income streams from different gig platforms.",
   },
   {
     title: "Tax Planning",
-    description: "Automatically calculate quarterly tax estimates and track deductible expenses.",
+    description:
+      "Automatically calculate quarterly tax estimates and track deductible expenses.",
   },
   {
     title: "Financial Insights",
-    description: "Get real-time analytics and predictions to optimize your earning potential.",
+    description:
+      "Get real-time analytics and predictions to optimize your earning potential.",
   },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
-  
+
   return (
     <header className="shadow-inner bg-opacity-15 w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border border-secondary z-40 rounded-2xl flex justify-between items-center p-2 bg-card">
       <Link href="/" className="font-bold text-lg flex items-center">
@@ -108,12 +112,18 @@ export const Navbar = () => {
             <SheetFooter className="flex-col sm:flex-col justify-start items-start">
               <Separator className="mb-2" />
               <SignedOut>
-                <SignInButton />
+                <div className="p-2 bg-orange-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200 w-[70px]">
+                  <SignInButton />
+                </div>
               </SignedOut>
               <SignedIn>
-                <UserButton />
+                <div className="p-2 bg-orange-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200 w-[70px]">
+                  <UserButton />
+                </div>
               </SignedIn>
-              <ToggleTheme />
+              <div className="p-2 w-[110x] ">
+                <ToggleTheme />
+              </div>
             </SheetFooter>
           </SheetContent>
         </Sheet>
@@ -129,8 +139,13 @@ export const Navbar = () => {
             <NavigationMenuContent>
               <div className="grid w-[600px] grid-cols-2 gap-5 p-4">
                 <div className="flex flex-col gap-2 p-4 bg-muted rounded-lg">
-                  <h3 className="font-semibold text-lg">Financial Tools for the Modern Worker</h3>
-                  <p className="text-sm text-muted-foreground">Simplify your finances with our comprehensive suite of tools designed for gig workers and freelancers.</p>
+                  <h3 className="font-semibold text-lg">
+                    Financial Tools for the Modern Worker
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Simplify your finances with our comprehensive suite of tools
+                    designed for gig workers and freelancers.
+                  </p>
                   <Image
                     src="/api/placeholder/600/300"
                     alt="Financial Dashboard"
@@ -171,12 +186,18 @@ export const Navbar = () => {
       </NavigationMenu>
 
       <div className="hidden lg:flex items-center gap-2">
-        <ToggleTheme />
+        <div className="p-2 w-[60px] ">
+          <ToggleTheme />
+        </div>
         <SignedOut>
-          <SignInButton />
+          <div className="p-2 bg-orange-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200 w-[70px]">
+            <SignInButton />
+          </div>
         </SignedOut>
         <SignedIn>
-          <UserButton />
+          <div className="p-2 bg-orange-500 text-white rounded-md hover:bg-blue-600 transition-colors duration-200 w-[70px]">
+            <UserButton />
+          </div>
         </SignedIn>
       </div>
     </header>
