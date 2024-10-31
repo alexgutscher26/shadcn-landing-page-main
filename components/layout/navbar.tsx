@@ -22,6 +22,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { ToggleTheme } from "./toogle-theme";
+import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
 
 interface RouteProps {
   href: string;
@@ -34,22 +35,10 @@ interface FeatureProps {
 }
 
 const routeList: RouteProps[] = [
-  {
-    href: "#features",
-    label: "Features",
-  },
-  {
-    href: "#pricing",
-    label: "Pricing",
-  },
-  {
-    href: "#resources",
-    label: "Resources",
-  },
-  {
-    href: "#support",
-    label: "Support",
-  },
+  { href: "#features", label: "Features" },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#resources", label: "Resources" },
+  { href: "#support", label: "Support" },
 ];
 
 const featureList: FeatureProps[] = [
@@ -59,25 +48,25 @@ const featureList: FeatureProps[] = [
   },
   {
     title: "Tax Planning",
-    description:
-      "Automatically calculate quarterly tax estimates and track deductible expenses.",
+    description: "Automatically calculate quarterly tax estimates and track deductible expenses.",
   },
   {
     title: "Financial Insights",
-    description:
-      "Get real-time analytics and predictions to optimize your earning potential.",
+    description: "Get real-time analytics and predictions to optimize your earning potential.",
   },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  
   return (
     <header className="shadow-inner bg-opacity-15 w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border border-secondary z-40 rounded-2xl flex justify-between items-center p-2 bg-card">
       <Link href="/" className="font-bold text-lg flex items-center">
         <Wallet className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
         GigFlow
       </Link>
-      {/* <!-- Mobile --> */}
+
+      {/* Mobile */}
       <div className="flex items-center lg:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
@@ -118,19 +107,19 @@ export const Navbar = () => {
 
             <SheetFooter className="flex-col sm:flex-col justify-start items-start">
               <Separator className="mb-2" />
-              <Button className="w-full mb-2" variant="default">
-                Sign In
-              </Button>
-              <Button className="w-full" variant="outline">
-                Start Free Trial
-              </Button>
+              <SignedOut>
+                <SignInButton />
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
               <ToggleTheme />
             </SheetFooter>
           </SheetContent>
         </Sheet>
       </div>
 
-      {/* <!-- Desktop --> */}
+      {/* Desktop */}
       <NavigationMenu className="hidden lg:block mx-auto">
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -183,12 +172,12 @@ export const Navbar = () => {
 
       <div className="hidden lg:flex items-center gap-2">
         <ToggleTheme />
-        <Button variant="ghost" size="sm">
-          Sign In
-        </Button>
-        <Button size="sm">
-          Start Free Trial
-        </Button>
+        <SignedOut>
+          <SignInButton />
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </header>
   );
