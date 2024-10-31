@@ -10,40 +10,40 @@ interface FeaturesProps {
 
 const featureList: FeaturesProps[] = [
   {
-    icon: "TabletSmartphone",
-    title: "Mobile Friendly",
+    icon: "LineChart",
+    title: "Income Analytics",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam, consectetur.",
+      "Visualize your earning patterns with beautiful charts and get insights into your income trends over time.",
   },
   {
-    icon: "BadgeCheck",
-    title: "Social Proof",
+    icon: "Wallet",
+    title: "Multiple Income Streams",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Natus consectetur, odio ea accusamus aperiam.",
+      "Track earnings from different sources - salary, freelance work, investments, and side hustles all in one place.",
   },
   {
-    icon: "Goal",
-    title: "Targeted Content",
+    icon: "Bell",
+    title: "Smart Notifications",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. odio ea accusamus aperiam.",
+      "Get alerts for payment deposits, upcoming invoices, and achieve your income goals with personalized notifications.",
   },
   {
-    icon: "PictureInPicture",
-    title: "Strong Visuals",
+    icon: "FileSpreadsheet",
+    title: "Easy Tax Reporting",
     description:
-      "Lorem elit. A odio velit cum aliquam. Natus consectetur dolores, odio ea accusamus aperiam.",
+      "Generate income reports for tax season effortlessly. Track deductions and categorize earnings automatically.",
   },
   {
-    icon: "MousePointerClick",
-    title: "Clear CTA",
+    icon: "Target",
+    title: "Goal Setting",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing. odio ea accusamus consectetur.",
+      "Set monthly and yearly income targets, track your progress, and celebrate when you hit your financial milestones.",
   },
   {
-    icon: "Newspaper",
-    title: "Clear Headline",
+    icon: "Smartphone",
+    title: "Mobile Access",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. A odio velit cum aliquam. Natus consectetur.",
+      "Check your income stats anywhere with our mobile-friendly dashboard. Add earnings and view reports on the go.",
   },
 ];
 
@@ -55,13 +55,12 @@ export const FeaturesSection = () => {
       </h2>
 
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        What Makes Us Different
+        Smart Income Tracking Made Simple
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
-        fugiat, odit similique quasi sint reiciendis quidem iure veritatis optio
-        facere tenetur.
+        Take control of your finances with powerful tools that help you understand,
+        track, and grow your income. Perfect for freelancers, employees, and side hustlers.
       </h3>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -91,3 +90,5 @@ export const FeaturesSection = () => {
     </section>
   );
 };
+
+export default FeaturesSection;

@@ -25,48 +25,48 @@ interface PlanProps {
 
 const plans: PlanProps[] = [
   {
-    title: "Free",
+    title: "Basic Tracker",
     popular: 0,
     price: 0,
     description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
-    buttonText: "Start Free Trial",
+      "Perfect for individuals just starting to track their income streams.",
+    buttonText: "Start Free",
     benefitList: [
-      "1 team member",
-      "1 GB storage",
-      "Upto 2 pages",
-      "Community support",
-      "AI assistance",
+      "Track up to 2 income sources",
+      "Basic income analytics",
+      "Monthly reports",
+      "Mobile app access",
+      "Email support",
     ],
   },
   {
-    title: "Premium",
+    title: "Pro Tracker",
     popular: 1,
-    price: 45,
+    price: 9.99,
     description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
-    buttonText: "Get starterd",
+      "Ideal for freelancers and professionals with multiple income streams.",
+    buttonText: "Start Pro Trial",
     benefitList: [
-      "4 team member",
-      "8 GB storage",
-      "Upto 6 pages",
+      "Unlimited income sources",
+      "Advanced analytics & forecasting",
+      "Tax categorization",
+      "Custom report builder",
       "Priority support",
-      "AI assistance",
     ],
   },
   {
-    title: "Enterprise",
+    title: "Business",
     popular: 0,
-    price: 120,
+    price: 24.99,
     description:
-      "Lorem ipsum dolor sit, amet ipsum consectetur adipisicing elit.",
-    buttonText: "Contact US",
+      "For business owners and teams managing complex income structures.",
+    buttonText: "Contact Sales",
     benefitList: [
-      "10 team member",
-      "20 GB storage",
-      "Upto 10 pages",
-      "Phone & email support",
-      "AI assistance",
+      "Multiple user accounts",
+      "Team collaboration tools",
+      "API access",
+      "Custom integrations",
+      "Dedicated account manager",
     ],
   },
 ];
@@ -75,15 +75,15 @@ export const PricingSection = () => {
   return (
     <section className="container py-24 sm:py-32">
       <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-        Pricing
+        Pricing Plans
       </h2>
 
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        Get unlimitted access
+        Track Your Income Growth
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground pb-14">
-        Lorem ipsum dolor sit amet consectetur adipisicing reiciendis.
+        Choose the perfect plan to manage your income streams and achieve your financial goals.
       </h3>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4">
@@ -135,6 +135,16 @@ export const PricingSection = () => {
           )
         )}
       </div>
+
+      <div className="mt-12 text-center text-muted-foreground">
+        <p>All plans include: 
+          <span className="mx-1">256-bit encryption</span> •
+          <span className="mx-1">Cloud backup</span> •
+          <span className="mx-1">Mobile app access</span>
+        </p>
+      </div>
     </section>
   );
 };
+
+export default PricingSection;

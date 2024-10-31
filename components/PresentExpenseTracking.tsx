@@ -71,15 +71,6 @@ export const PresentExpenseTracking = () => {
           </Card>
         </div>
       </div>
-
-      <div className="mt-16 text-center">
-        <p className="text-lg text-muted-foreground mb-4">
-          Join thousands of users who have taken control of their expenses
-        </p>
-        <Button variant="outline" size="lg">
-          View Success Stories
-        </Button>
-      </div>
-    </section>
+ </section>
   );
 };
